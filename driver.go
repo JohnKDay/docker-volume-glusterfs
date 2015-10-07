@@ -72,11 +72,11 @@ func (d glusterfsDriver) Remove(r dkvolume.Request) dkvolume.Response {
 
 	if s, ok := d.volumes[m]; ok {
 		if s.connections <= 1 {
-			if d.restClient != nil {
-				if err := d.restClient.StopVolume(r.Name); err != nil {
-					return dkvolume.Response{Err: err.Error()}
-				}
-			}
+//			if d.restClient != nil {
+//				if err := d.restClient.StopVolume(r.Name); err != nil {
+//					return dkvolume.Response{Err: err.Error()}
+//				}
+//			}
 			delete(d.volumes, m)
 		}
 	}
